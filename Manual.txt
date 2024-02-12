@@ -1,0 +1,81 @@
+======================================================================
+		Instruction Manual for Root Finder program
+======================================================================
+
+Read in Full Screen for better visibility.
+
+# Dependency on Sympy Library
+
+This root finding script relies on the Sympy library for symbolic mathematics. If the Sympy library is not installed on your device, you can install it using the following command:
+
+	pip install sympy
+
+# How to Use the Script
+
+	1. Run the script in a Python environment.
+	2. The script will present you with a menu to choose between the Bisection Method and Newton-Raphson Method for finding roots of a function.
+	3. Enter the desired method by selecting the corresponding number.
+	4. Enter the function you want to find the roots for in a format that Sympy can understand. For example:
+
+		- Polynomial function: x**2 - 4			intervals (1, 3) for bisection		initial guess 3  for newton-Raphson
+		- Logarithmic function: log(x, 10) - 2		intervals (1, 200) for bisection	initial guess 3  for newton-Raphson
+		- Trigonometric function: 4*sin(x) - 3 		intervals (58, 60) for bisection	initial guess 60 for newton-Raphson
+		- Hyperbolic function: cosh(x) - 2		intervals (0, 2) for bisection		initial guess  2 for newton-Raphson
+
+	5. Follow the prompts to provide additional inputs required for the selected method.
+
+		- intervals: the intervals where your're certain there's a root inbetween (for bisection method)
+		- initial guess: a guess that you assume is within the range of the actual root (for Newton-Raphson method)
+		- maximum iteration: the maximum number of times you want the loop to run (for Newton-Raphson method)
+
+	6. The script will then calculate and display each iteration and the approximate root of the function.
+
+
+# Sympy formatting
+
+the following are common operations in Sympy
+
+	** power x squared is x**2
+
+	* multiplication
+
+	sqrt(4) square root
+
+	/ division
+
+	+ addition
+
+	- difference
+
+
+-- Polynomial Functions
+	
+	to write polynomial expressions in a format that Sympy understands you denote each operation with precedence according to BODMAS
+	
+	Example: x^4 + 2x^2 - 3		will become	x**4 + 2*(x**2) - 3
+
+-- Logarithmic Functions
+
+	to write Logarithmic expressions use log(x, b) where b is the base other operations remain the same
+
+	the default base for log(x) when b is not provided is 2. hence log(x) = log(x, 2)
+
+-- Trigonometric Functions
+
+	to write Trigonometric expressions use the common notation sin(x), cos(x) ....
+
+	However, x in sin(x) is evaluated as rads not degree so sin(90) == 0.89 and not 1, since x = 90 rads not degrees
+
+	other operations also remain the same
+
+-- Hyperbolix Functions
+
+	to write Trigonometric expressions use the common notations sinh(x), cosh(x) ...
+
+	other operations remain the same
+
+# Troubleshooting
+
+if the program is stuck in infinite loop due to incorrect intervals (or other reasons) use CTRL + C, to send interrupt signal and terminate the program
+
+================================================================================================
